@@ -1,0 +1,4 @@
+{
+  // Ignore PR templates (they don't need H1 headers)
+  "ignores": [".github/PULL_REQUEST_TEMPLATE.md"]
+}

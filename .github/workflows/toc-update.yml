@@ -26,6 +26,9 @@ jobs:
       - name: Update TOC
         run: npm run toc
 
+      - name: Remove Contributing from TOC (awesome-lint requirement)
+        run: sed -i 's/- \[Contributing\].*$//' README.md && sed -i '/^$/N;/^\n$/d' README.md
+
       - name: Check for changes
         id: changes
         run: |

@@ -15,13 +15,13 @@ Thank you for contributing to this awesome list! Please follow these guidelines.
 All items must follow this format:
 
 ```markdown
-- [Item Name](https://url.com) - Brief description without trailing punctuation
+- [Item Name](https://url.com) - Brief description ending with a period.
 ```
 
 **Important formatting rules:**
 
 - Use `[Name](URL) - Description` format (space-dash-space between URL and description)
-- Descriptions should not end with punctuation
+- Descriptions must end with proper punctuation (period, exclamation, or question mark)
 - Keep descriptions concise (one sentence)
 - Place items in alphabetical order within their category
 

@@ -47,15 +47,15 @@ The issue templates in `.github/ISSUE_TEMPLATE/` have placeholder category optio
 
 ## What's Included
 
-| Feature | Description |
-|---------|-------------|
-| **Linting** | markdownlint + Prettier checks on PRs |
-| **Awesome-lint** | Official awesome list validation |
-| **Link checking** | Weekly scan + PR checks for dead links |
-| **Auto TOC** | Table of contents generated on push |
-| **Auto sort** | Items sorted alphabetically on push |
+| Feature             | Description                                 |
+| ------------------- | ------------------------------------------- |
+| **Linting**         | markdownlint + Prettier checks on PRs       |
+| **Awesome-lint**    | Official awesome list validation            |
+| **Link checking**   | Weekly scan + PR checks for dead links      |
+| **Auto TOC**        | Table of contents generated on push         |
+| **Auto sort**       | Items sorted alphabetically on push         |
 | **Issue templates** | Forms for adding items and reporting issues |
-| **PR template** | Checklist for contributors |
+| **PR template**     | Checklist for contributors                  |
 
 ## Running Locally
 
