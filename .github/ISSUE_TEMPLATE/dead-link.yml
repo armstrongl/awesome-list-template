@@ -1,0 +1,51 @@
+name: Dead Link
+description: Report a broken link in the list
+title: "Dead link: [URL]"
+labels: ["bug", "dead-link"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping maintain link quality!
+
+  - type: input
+    id: url
+    attributes:
+      label: Broken URL
+      description: The URL that isn't working
+      placeholder: "https://example.com/broken"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error-type
+    attributes:
+      label: Error Type
+      description: What happens when you visit the link?
+      options:
+        - 404 Not Found
+        - Domain expired
+        - Timeout
+        - SSL/Security error
+        - Redirect loop
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: item-name
+    attributes:
+      label: Affected Item
+      description: The name of the list item with this link
+      placeholder: "Example Tool"
+    validations:
+      required: true
+
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Suggested Replacement
+      description: Do you know of an updated URL or replacement resource?
+      placeholder: "The project moved to https://..."
+    validations:
+      required: false
