@@ -1,0 +1,28 @@
+{
+  "name": "awesome-list-template",
+  "version": "1.0.0",
+  "description": "A batteries-included template for creating awesome lists",
+  "private": true,
+  "scripts": {
+    "lint": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lint:fix": "markdownlint-cli2 --fix '**/*.md' '#node_modules'",
+    "format": "prettier --check '**/*.md'",
+    "format:fix": "prettier --write '**/*.md'",
+    "awesome-lint": "awesome-lint",
+    "toc": "doctoc README.md --github --title '## Contents'",
+    "test": "npm run lint && npm run format && npm run awesome-lint"
+  },
+  "devDependencies": {
+    "awesome-lint": "^1.0.0",
+    "doctoc": "^2.2.1",
+    "markdownlint-cli2": "^0.14.0",
+    "prettier": "^3.4.2"
+  },
+  "keywords": [
+    "awesome",
+    "awesome-list",
+    "curated-list",
+    "template"
+  ],
+  "license": "CC0-1.0"
+}
