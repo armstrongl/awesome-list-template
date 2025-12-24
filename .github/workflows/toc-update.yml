@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: readme-automation
+  cancel-in-progress: false
+
 jobs:
   toc:
     runs-on: ubuntu-latest
