@@ -1,0 +1,18 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/
+
+# Exclude patterns
+exclude = [
+    # Relative GitHub URLs (work correctly on GitHub, but lychee interprets as files)
+    "^\\.\\..*",
+    # Example/placeholder URLs in template
+    "https://github.com/example/.*",
+    "https://example\\.com",
+    "https://example\\.org",
+]
+
+# Accept these status codes as valid
+accept = [200, 204, 206]
+
+# Don't require HTTPS (some older links may still use HTTP)
+require_https = false

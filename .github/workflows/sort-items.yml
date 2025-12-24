@@ -6,6 +6,9 @@ on:
     paths:
       - "README.md"
 
+permissions:
+  contents: write
+
 jobs:
   sort:
     runs-on: ubuntu-latest
