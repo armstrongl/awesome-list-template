@@ -1,0 +1,57 @@
+name: Add Item
+description: Suggest a new item for the awesome list
+title: "Add: [Item Name]"
+labels: ["addition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an item! Please fill out the details below.
+
+  - type: input
+    id: name
+    attributes:
+      label: Item Name
+      description: The name of the resource
+      placeholder: "Example Tool"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the resource
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief description (one sentence, no trailing punctuation)
+      placeholder: "A tool that helps you do X more efficiently"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which section should this go in?
+      options:
+        - Section One
+        - Section Two
+        - Suggest new category
+    validations:
+      required: true
+
+  - type: textarea
+    id: experience
+    attributes:
+      label: Your Experience
+      description: How have you used this resource?
+      placeholder: "I've been using this for..."
+    validations:
+      required: false
