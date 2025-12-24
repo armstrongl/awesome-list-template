@@ -1,0 +1,40 @@
+name: Category Change
+description: Suggest restructuring categories or sections
+title: "Category: [Brief description]"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest improvements to how the list is organized.
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Structure
+      description: Describe the current category/section arrangement
+      placeholder: |
+        Currently Section One contains...
+        Section Two contains...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed Change
+      description: What changes would you suggest?
+      placeholder: |
+        I suggest splitting Section One into...
+        Or merging X and Y because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why would this change improve the list?
+      placeholder: "This would help users find resources more easily because..."
+    validations:
+      required: true
