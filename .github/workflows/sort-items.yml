@@ -23,16 +23,25 @@ jobs:
 
       - name: Sort list items alphabetically
         run: |
-          # Sort list items within each section
+          # Sort list items within each section (excluding TOC)
           python3 << 'EOF'
           import re
 
           with open('README.md', 'r') as f:
               content = f.read()
 
-          # Pattern to match sections with list items
-          # Matches: ## Section Name\n\n- items...\n\n
-          section_pattern = r'(## [^\n]+\n\n(?:[^\n]*\n)*?)((?:- \[[^\]]+\]\([^)]+\)[^\n]*\n)+)'
+          # Extract TOC block to preserve it
+          toc_pattern = r'(<!-- START doctoc.*?<!-- END doctoc[^\n]*\n)'
+          toc_match = re.search(toc_pattern, content, re.DOTALL)
+          toc_placeholder = '<!--TOC_PLACEHOLDER-->'
+
+          if toc_match:
+              toc_block = toc_match.group(1)
+              content = content.replace(toc_block, toc_placeholder)
+
+          # Pattern to match sections with list items (external URLs only)
+          # Matches: ## Section Name\n\n- [Name](https://...)...
+          section_pattern = r'(## [^\n]+\n\n(?:[^\n]*\n)*?)((?:- \[[^\]]+\]\(https?://[^)]+\)[^\n]*\n)+)'
 
           def sort_items(match):
               header = match.group(1)
@@ -43,6 +52,10 @@ jobs:
               return header + '\n'.join(sorted_items) + '\n'
 
           sorted_content = re.sub(section_pattern, sort_items, content)
+
+          # Restore TOC block
+          if toc_match:
+              sorted_content = sorted_content.replace(toc_placeholder, toc_block)
 
           with open('README.md', 'w') as f:
               f.write(sorted_content)
