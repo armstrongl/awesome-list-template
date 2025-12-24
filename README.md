@@ -11,7 +11,6 @@ Brief description of what this list covers and why it exists. Replace "topic" th
 - [Section One](#section-one)
 - [Section Two](#section-two)
 - [Related](#related)
-
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Section One
