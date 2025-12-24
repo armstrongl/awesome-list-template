@@ -1,0 +1,60 @@
+name: Sort Items
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+
+jobs:
+  sort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sort list items alphabetically
+        run: |
+          # Sort list items within each section
+          python3 << 'EOF'
+          import re
+
+          with open('README.md', 'r') as f:
+              content = f.read()
+
+          # Pattern to match sections with list items
+          # Matches: ## Section Name\n\n- items...\n\n
+          section_pattern = r'(## [^\n]+\n\n(?:[^\n]*\n)*?)((?:- \[[^\]]+\]\([^)]+\)[^\n]*\n)+)'
+
+          def sort_items(match):
+              header = match.group(1)
+              items = match.group(2)
+              # Split into individual items and sort
+              item_list = [item for item in items.strip().split('\n') if item.startswith('- [')]
+              sorted_items = sorted(item_list, key=lambda x: x.lower())
+              return header + '\n'.join(sorted_items) + '\n'
+
+          sorted_content = re.sub(section_pattern, sort_items, content)
+
+          with open('README.md', 'w') as f:
+              f.write(sorted_content)
+          EOF
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit sorted items
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "style: sort list items alphabetically [skip ci]"
+          git push
