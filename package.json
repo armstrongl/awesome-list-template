@@ -10,6 +10,8 @@
     "format:fix": "prettier --write '**/*.md'",
     "awesome-lint": "awesome-lint",
     "toc": "doctoc README.md --github --title '## Contents'",
+    "fix": "npm run lint:fix && npm run format:fix",
+    "fix:all": "npm run lint:fix && npm run format:fix && npm run toc",
     "test": "npm run lint && npm run format && npm run awesome-lint"
   },
   "devDependencies": {

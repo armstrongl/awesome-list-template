@@ -30,8 +30,8 @@ body:
     id: description
     attributes:
       label: Description
-      description: Brief description (one sentence, no trailing punctuation)
-      placeholder: "A tool that helps you do X more efficiently"
+      description: Brief description (one sentence, ending with punctuation)
+      placeholder: "A tool that helps you do X more efficiently."
     validations:
       required: true
 

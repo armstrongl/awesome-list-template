@@ -7,7 +7,7 @@
 Please ensure your PR meets these requirements:
 
 - [ ] Item follows `[Name](URL) - Description` format
-- [ ] Description does not end with punctuation
+- [ ] Description ends with punctuation (period, exclamation, or question mark)
 - [ ] Link is working and appropriate
 - [ ] Item is placed in the correct category
 - [ ] Item is not a duplicate
