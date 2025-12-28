@@ -1,4 +1,4 @@
-# Awesome Topic [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Lint](https://github.com/armstrongl/awesome-list-template/actions/workflows/lint.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/lint.yml)
+# Awesome Topic [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Validate](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml)
 
 > A curated list of awesome topic resources.
 
