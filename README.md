@@ -1,4 +1,4 @@
-# Awesome Topic [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Validate](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml)
+# Awesome Topic [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Lint](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml)
 
 > A curated list of awesome topic resources.
 
@@ -6,7 +6,6 @@ Brief description of what this list covers and why it exists. Replace "topic" th
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Contents
 
 - [Section One](#section-one)
