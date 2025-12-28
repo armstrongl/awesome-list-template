@@ -15,7 +15,7 @@
     "test": "npm run lint && npm run format && npm run awesome-lint"
   },
   "devDependencies": {
-    "awesome-lint": "^1.0.0",
+    "awesome-lint": "^2.2.2",
     "doctoc": "^2.2.1",
     "markdownlint-cli2": "^0.14.0",
     "prettier": "^3.4.2"
