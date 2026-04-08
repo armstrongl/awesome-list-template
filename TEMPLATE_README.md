@@ -12,21 +12,27 @@ This is a template repository for creating awesome lists. Follow these steps to 
 
 ## Customization Steps
 
-### 1. Update README.md
+### 1. Run the Setup Script
 
-- [ ] Replace all `YOUR_*` placeholders (see `SETUP.md` for the full inventory)
-- [ ] Update the description paragraph (replace `YOUR_LIST_DESCRIPTION`)
-- [ ] Rename section headings for your categories (replace `YOUR_CATEGORY_1`, `YOUR_CATEGORY_2`)
+```bash
+npm run setup
+```
+
+The interactive wizard replaces all `YOUR_*` placeholders across every file. Or do it manually -- see `SETUP.md` for the full placeholder inventory.
+
+### 2. Update README.md
+
+- [ ] Rename section headings for your categories
 - [ ] Replace example items with real items
 - [ ] Update the TOC (runs automatically on push, or run `npm run toc`)
 
-### 2. Update CONTRIBUTING.md
+### 3. Update CONTRIBUTING.md
 
 - [ ] Replace references to "this list" with your specific topic
 - [ ] Add any topic-specific contribution requirements
 - [ ] Update examples if needed
 
-### 3. Configure Funding (Optional)
+### 4. Configure Funding (Optional)
 
 Edit `.github/FUNDING.yml` to enable GitHub Sponsors:
 
@@ -34,11 +40,11 @@ Edit `.github/FUNDING.yml` to enable GitHub Sponsors:
 github: [your-username]
 ```
 
-### 4. Update Issue Templates
+### 5. Update Issue Templates
 
 The issue templates in `.github/ISSUE_TEMPLATE/` have placeholder category options. Update `add-item.yml` to list your actual categories.
 
-### 5. Final Steps
+### 6. Final Steps
 
 - [ ] Delete this `TEMPLATE_README.md` file
 - [ ] Make your first commit
@@ -47,15 +53,24 @@ The issue templates in `.github/ISSUE_TEMPLATE/` have placeholder category optio
 
 ## What's Included
 
-| Feature             | Description                                 |
-| ------------------- | ------------------------------------------- |
-| **Linting**         | markdownlint + Prettier checks on PRs       |
-| **Awesome-lint**    | Official awesome list validation            |
-| **Link checking**   | Weekly scan + PR checks for dead links      |
-| **Auto TOC**        | Table of contents generated on push         |
-| **Auto sort**       | Items sorted alphabetically on push         |
-| **Issue templates** | Forms for adding items and reporting issues |
-| **PR template**     | Checklist for contributors                  |
+| Feature                 | Description                                           |
+| ----------------------- | ----------------------------------------------------- |
+| **Linting**             | markdownlint + Prettier checks on PRs                 |
+| **Awesome-lint**        | Official awesome list validation                      |
+| **Link checking**       | Weekly scan + PR checks for dead links                |
+| **Auto TOC**            | Table of contents generated on push                   |
+| **Auto sort**           | Items sorted alphabetically on push                   |
+| **Issue templates**     | Forms for adding, removing items and reporting issues |
+| **PR template**         | Checklist with attestation for contributors           |
+| **Banner**              | Light/dark SVG banners with `<picture>` element       |
+| **Badge row**           | CI, Track, License, and Last Commit badges            |
+| **Legend**              | Emoji markers for paid, beta, stale, deprecated       |
+| **Code of Conduct**     | Contributor Covenant v2.1                             |
+| **Stale bot**           | Auto-closes inactive issues and PRs                   |
+| **Welcome bot**         | Greets first-time contributors                        |
+| **Staleness detection** | (Opt-in) Monthly GitHub repo health checks            |
+| **Quality gates**       | (Opt-in) PR submission quality validation             |
+| **Setup script**        | Interactive placeholder replacement wizard            |
 
 ## Running Locally
 
