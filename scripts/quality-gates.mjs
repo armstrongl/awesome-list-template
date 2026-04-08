@@ -204,8 +204,9 @@ export function generateMarkdownSummary(results) {
       ? "passed"
       : "failed";
 
+    const safeName = item.name.replace(/\|/g, "\\|");
     lines.push(
-      `| [${item.name}](${item.url}) | ${formatIcon} | ${dupIcon} | ${linkIcon} | ${details.join("; ") || overallStatus} |`,
+      `| [${safeName}](${item.url}) | ${formatIcon} | ${dupIcon} | ${linkIcon} | ${details.join("; ") || overallStatus} |`,
     );
   }
 
