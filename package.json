@@ -12,7 +12,8 @@
     "toc": "doctoc README.md --github --title '## Contents'",
     "fix": "npm run lint:fix && npm run format:fix",
     "fix:all": "npm run lint:fix && npm run format:fix && npm run toc",
-    "test": "npm run lint && npm run format && npm run awesome-lint"
+    "test": "npm run lint && npm run format && npm run awesome-lint",
+    "setup": "node scripts/setup.mjs"
   },
   "devDependencies": {
     "awesome-lint": "^1.0.0",
