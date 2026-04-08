@@ -1,0 +1,62 @@
+name: PR Quality Check
+# NOTE: The workflow name above is referenced by pr-comment.yml's workflow_run
+# trigger. If you rename it, update pr-comment.yml to match.
+
+on:
+  # Uncomment the next 3 lines to enable quality checks on PRs
+  # pull_request:
+  #   paths:
+  #     - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Extract changed README lines
+        id: diff
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git diff ${{ github.event.pull_request.base.sha }}...HEAD -- README.md | grep '^+' | grep -v '^+++' > changed-lines.txt || true
+          else
+            # For workflow_dispatch, check all items
+            cat README.md > changed-lines.txt
+          fi
+
+      - name: Run quality gates
+        run: node scripts/quality-gates.mjs --input changed-lines.txt --readme README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save PR metadata
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p pr-meta
+          echo "${{ github.event.number }}" > pr-meta/pr_number
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: quality-check-pr-${{ github.event.number || 'manual' }}
+          path: |
+            quality-results.json
+            quality-summary.md
+            pr-meta/
+          retention-days: 7
