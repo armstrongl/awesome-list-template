@@ -211,6 +211,9 @@ config.local.*
 Thumbs.db
 ehthumbs.db
 
+# Generated reports
+staleness-report.md
+
 # Archive files (typically not source material)
 # *.zip
 # *.tar.gz
