@@ -1,27 +1,28 @@
-# Awesome Topic [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Lint](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml)
+# Awesome YOUR_TOPIC [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Lint](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml)
 
-> A curated list of awesome topic resources.
+> A curated list of awesome YOUR_TOPIC resources.
 
-Brief description of what this list covers and why it exists. Replace "topic" throughout this file with your actual subject.
+YOUR_LIST_DESCRIPTION
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Contents
 
-- [Section One](#section-one)
-- [Section Two](#section-two)
+- [YOUR_CATEGORY_1](#your_category_1)
+- [YOUR_CATEGORY_2](#your_category_2)
 - [Related](#related)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Section One
+## YOUR_CATEGORY_1
 
-Resources for the first category.
+Resources for YOUR_CATEGORY_1.
 
 - [Example Item](https://example.com) - Brief description of what this resource offers.
 
-## Section Two
+## YOUR_CATEGORY_2
 
-Resources for the second category.
+Resources for YOUR_CATEGORY_2.
 
 - [Another Item](https://example.org) - Description with proper punctuation.
 

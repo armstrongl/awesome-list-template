@@ -1,7 +1,7 @@
 {
-  "name": "awesome-list-template",
+  "name": "awesome-YOUR_TOPIC",
   "version": "1.0.0",
-  "description": "A batteries-included template for creating awesome lists",
+  "description": "YOUR_LIST_DESCRIPTION",
   "private": true,
   "scripts": {
     "lint": "markdownlint-cli2 '**/*.md' '#node_modules'",

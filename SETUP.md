@@ -27,14 +27,19 @@ npm install
 
 ### 3. Customize your list
 
-Update these files with your topic:
+Search for `YOUR_` across the project and replace each placeholder with your values:
 
-| File                                  | What to change                                                                          |
-| ------------------------------------- | --------------------------------------------------------------------------------------- |
-| `README.md`                           | Replace "Topic" with your subject, update badge URL, write description, define sections |
-| `package.json`                        | Update `name` field to match your repo                                                  |
-| `.github/ISSUE_TEMPLATE/add-item.yml` | Update category dropdown options to match your sections                                 |
-| `CONTRIBUTING.md`                     | Update repository references                                                            |
+| Placeholder             | Meaning                             | Files                                                           |
+| ----------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| `YOUR_TOPIC`            | The list's topic (e.g., "Docker")   | `README.md`, `package.json`                                     |
+| `YOUR_LIST_DESCRIPTION` | One-line description of the list    | `README.md`, `package.json`                                     |
+| `YOUR_CATEGORY_1`       | First section/category name         | `README.md`, `.github/ISSUE_TEMPLATE/add-item.yml`              |
+| `YOUR_CATEGORY_2`       | Second section/category name        | `README.md`, `.github/ISSUE_TEMPLATE/add-item.yml`              |
+| `YOUR_GITHUB_USERNAME`  | Your GitHub username or org         | Lint badge URL in `README.md` (replace `armstrongl`)            |
+| `YOUR_REPO_NAME`        | Your repository name                | Lint badge URL in `README.md` (replace `awesome-list-template`) |
+| `YOUR_EMAIL`            | Contact email (for Code of Conduct) | `CODE_OF_CONDUCT.md` (if added)                                 |
+
+Add more categories by duplicating the section pattern in `README.md` and adding matching dropdown options in `.github/ISSUE_TEMPLATE/add-item.yml`.
 
 ### 4. Validate your changes
 

@@ -9,6 +9,8 @@ exclude = [
     "https://github.com/example/.*",
     "https://example\\.com",
     "https://example\\.org",
+    # Placeholder URLs from YOUR_* template variables
+    "https://github.com/YOUR_.*",
 ]
 
 # Accept these status codes as valid

@@ -14,9 +14,9 @@ This is a template repository for creating awesome lists. Follow these steps to 
 
 ### 1. Update README.md
 
-- [ ] Replace `Awesome Topic` with `Awesome [Your Topic]`
-- [ ] Update the description paragraph
-- [ ] Rename section headings for your categories
+- [ ] Replace all `YOUR_*` placeholders (see `SETUP.md` for the full inventory)
+- [ ] Update the description paragraph (replace `YOUR_LIST_DESCRIPTION`)
+- [ ] Rename section headings for your categories (replace `YOUR_CATEGORY_1`, `YOUR_CATEGORY_2`)
 - [ ] Replace example items with real items
 - [ ] Update the TOC (runs automatically on push, or run `npm run toc`)
 
