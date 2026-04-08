@@ -1,0 +1,51 @@
+name: Remove Item
+description: Request removal of an item from the list
+title: "Remove: [Item Name]"
+labels: ["removal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide details about the item you'd like removed.
+
+  - type: input
+    id: name
+    attributes:
+      label: Item Name
+      description: The name of the resource to remove
+      placeholder: "Example Tool"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the resource
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason for Removal
+      description: Why should this item be removed?
+      options:
+        - Dead link or unavailable
+        - Abandoned or unmaintained
+        - Low quality
+        - Duplicate of another item
+        - Off-topic for this list
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide evidence supporting the removal (e.g., 404 errors, last commit date, quality concerns)
+      placeholder: "The repository hasn't been updated since..."
+    validations:
+      required: false
