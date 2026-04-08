@@ -1,0 +1,49 @@
+name: Welcome
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const username = context.payload.sender.login;
+            const isIssue = !!context.payload.issue;
+            const number = isIssue
+              ? context.payload.issue.number
+              : context.payload.pull_request.number;
+
+            // Check for prior issues and PRs from this user
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              creator: username,
+              state: "all",
+              per_page: 2,
+            });
+
+            // Filter out the current issue/PR
+            const prior = issues.filter((i) => i.number !== number);
+            if (prior.length > 0) return;
+
+            const body = isIssue
+              ? `Welcome @${username}! Thanks for opening your first issue. A maintainer will review it shortly.\n\nIn the meantime, please check the [contribution guidelines](CONTRIBUTING.md) for helpful context.`
+              : `Welcome @${username}! Thanks for your first pull request. A maintainer will review it shortly.\n\nPlease make sure you've read the [contribution guidelines](CONTRIBUTING.md) and that all CI checks pass.`;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body,
+            });
