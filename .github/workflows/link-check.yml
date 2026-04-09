@@ -30,7 +30,7 @@ jobs:
 
       - name: Create Issue on Failure
         if: failure() && github.event_name == 'schedule'
-        uses: peter-evans/create-issue-from-file@24452a72d85b9e5440a9d0b0a7350c59a0ecfe76 # v5.0.0
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
         with:
           title: "Link Check: Dead links found"
           labels: bug, dead-link

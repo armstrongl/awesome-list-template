@@ -41,8 +41,8 @@ body:
       label: Category
       description: Which section should this go in?
       options:
-        - Section One
-        - Section Two
+        - YOUR_CATEGORY_1
+        - YOUR_CATEGORY_2
         - Suggest new category
     validations:
       required: true

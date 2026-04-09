@@ -4,7 +4,7 @@ This guide walks you through creating your own awesome list from this template.
 
 ## Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 20+ and npm
 - Git
 
 ## Quick Start
@@ -25,18 +25,33 @@ rm -rf .git && git init
 npm install
 ```
 
-### 3. Customize your list
+### 3. Run the setup script
 
-Update these files with your topic:
+The interactive wizard replaces all `YOUR_*` placeholders across every file:
 
-| File                                  | What to change                                                                          |
-| ------------------------------------- | --------------------------------------------------------------------------------------- |
-| `README.md`                           | Replace "Topic" with your subject, update badge URL, write description, define sections |
-| `package.json`                        | Update `name` field to match your repo                                                  |
-| `.github/ISSUE_TEMPLATE/add-item.yml` | Update category dropdown options to match your sections                                 |
-| `CONTRIBUTING.md`                     | Update repository references                                                            |
+```bash
+npm run setup
+```
 
-### 4. Validate your changes
+Or replace them manually -- see the placeholder inventory below.
+
+### 4. Customize your list
+
+Search for `YOUR_` across the project and replace each placeholder with your values:
+
+| Placeholder             | Meaning                             | Files                                                                                               |
+| ----------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `YOUR_TOPIC`            | The list's topic (e.g., "Docker")   | `README.md`, `package.json`, `CONTRIBUTING.md`, `assets/banner-light.svg`, `assets/banner-dark.svg` |
+| `YOUR_LIST_DESCRIPTION` | One-line description of the list    | `README.md`, `package.json`                                                                         |
+| `YOUR_CATEGORY_1`       | First section/category name         | `README.md`, `.github/ISSUE_TEMPLATE/add-item.yml`, `.github/ISSUE_TEMPLATE/category-change.yml`    |
+| `YOUR_CATEGORY_2`       | Second section/category name        | `README.md`, `.github/ISSUE_TEMPLATE/add-item.yml`, `.github/ISSUE_TEMPLATE/category-change.yml`    |
+| `YOUR_GITHUB_USERNAME`  | Your GitHub username or org         | Lint badge URL in `README.md`, `.github/ISSUE_TEMPLATE/config.yml`                                  |
+| `YOUR_REPO_NAME`        | Your repository name                | Lint badge URL in `README.md`, `.github/ISSUE_TEMPLATE/config.yml`                                  |
+| `YOUR_EMAIL`            | Contact email (for Code of Conduct) | `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`                                                             |
+
+Add more categories by duplicating the section pattern in `README.md` and adding matching dropdown options in `.github/ISSUE_TEMPLATE/add-item.yml`.
+
+### 5. Validate your changes
 
 ```bash
 npm test
@@ -44,7 +59,7 @@ npm test
 
 This runs markdownlint, Prettier format check, and awesome-lint validation.
 
-### 5. Commit and push
+### 6. Commit and push
 
 ```bash
 git add .
@@ -56,6 +71,7 @@ git push -u origin main
 
 | Command                | Description                                     |
 | ---------------------- | ----------------------------------------------- |
+| `npm run setup`        | Interactive placeholder replacement wizard      |
 | `npm test`             | Run all validation (lint, format, awesome-lint) |
 | `npm run lint`         | Check markdown formatting                       |
 | `npm run lint:fix`     | Auto-fix markdown issues                        |
@@ -83,9 +99,43 @@ If you use Claude Code, these commands are available:
 
 GitHub Actions handle ongoing maintenance:
 
-- **validate.yml** - Runs on every push/PR to check formatting
-- **auto-format.yml** - Sorts items alphabetically and updates TOC on push to main
-- **link-check.yml** - Weekly dead link detection with auto-issue creation
+### Core Workflows
+
+- **validate.yml** -- Runs on every push/PR to check formatting (markdownlint, Prettier, awesome-lint)
+- **auto-format.yml** -- Sorts items alphabetically and updates TOC on push to main
+- **link-check.yml** -- Weekly dead link detection with auto-issue creation
+
+### Community Workflows
+
+- **stale.yml** -- Marks inactive issues/PRs as stale after 60 days, closes after 7 more days
+- **welcome.yml** -- Welcomes first-time contributors on their first issue, PR, or merge
+
+### Opt-in Workflows
+
+These workflows ship disabled. Enable them when your list is ready.
+
+- **staleness-check.yml** -- (Opt-in) Monthly GitHub repo staleness detection; checks whether linked repositories are still maintained
+- **pr-quality-check.yml** -- (Opt-in) Quality checks on PR submissions; validates item format, description length, and link health
+- **pr-comment.yml** -- Posts quality check results as PR comments
+
+## When to Enable Opt-in Features
+
+- **Quality gates** (uncomment trigger in `pr-quality-check.yml`): Recommended when you have 50+ items and receive regular external contributions.
+- **Staleness detection** (uncomment schedule in `staleness-check.yml`): Recommended when you have 100+ items, mostly GitHub repos.
+
+## What to Delete If You Don't Need It
+
+These files are optional. Remove anything that does not fit your workflow:
+
+| File                                                                          | When to delete                                                                    |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `CODE_OF_CONDUCT.md`                                                          | If you have your own Code of Conduct                                              |
+| `.github/workflows/stale.yml`                                                 | If you don't want automatic stale management                                      |
+| `.github/workflows/welcome.yml`                                               | If you don't want welcome messages                                                |
+| `.github/workflows/staleness-check.yml`                                       | If you don't need staleness detection                                             |
+| `.github/workflows/pr-quality-check.yml` + `.github/workflows/pr-comment.yml` | If you don't need quality gates                                                   |
+| `## Legend` section in `README.md`                                            | If you don't use markers                                                          |
+| `assets/banner-light.svg` + `assets/banner-dark.svg`                          | If you don't want a banner (also remove the `<picture>` element from `README.md`) |
 
 ## List Item Format
 
@@ -101,6 +151,20 @@ Requirements:
 - Description ends with period, exclamation, or question mark
 - One sentence descriptions
 - Items are auto-sorted alphabetically
+
+### Section Descriptions
+
+Each section can have an italicized description:
+
+```markdown
+## Section Name
+
+_Brief description of this section._
+
+- [Item](https://example.com) - Description.
+```
+
+**Important**: Never place a plain-text paragraph immediately after an italicized section description. The next element after the description must be a list. This avoids `no-emphasis-as-heading` lint violations.
 
 ## Troubleshooting
 

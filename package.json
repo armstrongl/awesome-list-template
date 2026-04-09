@@ -1,7 +1,7 @@
 {
-  "name": "awesome-list-template",
+  "name": "awesome-your-topic",
   "version": "1.0.0",
-  "description": "A batteries-included template for creating awesome lists",
+  "description": "YOUR_LIST_DESCRIPTION",
   "private": true,
   "scripts": {
     "lint": "markdownlint-cli2 '**/*.md' '#node_modules'",
@@ -12,7 +12,8 @@
     "toc": "doctoc README.md --github --title '## Contents'",
     "fix": "npm run lint:fix && npm run format:fix",
     "fix:all": "npm run lint:fix && npm run format:fix && npm run toc",
-    "test": "npm run lint && npm run format && npm run awesome-lint"
+    "test": "npm run lint && npm run format && npm run awesome-lint",
+    "setup": "node scripts/setup.mjs"
   },
   "devDependencies": {
     "awesome-lint": "^1.0.0",

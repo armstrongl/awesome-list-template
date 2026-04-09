@@ -1,0 +1,42 @@
+name: PR Quality Comment
+# NOTE: This workflow is triggered by the "PR Quality Check" workflow.
+# If you rename that workflow's name field, update the workflows array below.
+
+on:
+  workflow_run:
+    workflows: ["PR Quality Check"]
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request'
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: quality-check-pr-*
+          merge-multiple: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Read PR number and summary
+        id: read
+        run: |
+          PR_NUMBER=$(cat pr-meta/pr_number)
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          SUMMARY=$(cat quality-summary.md)
+          echo "summary<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$SUMMARY" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Post or update PR comment
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5.0.0
+        with:
+          issue-number: ${{ steps.read.outputs.pr_number }}
+          body: ${{ steps.read.outputs.summary }}
+          body-includes: "## Quality Gate Results"
