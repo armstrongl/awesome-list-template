@@ -29,32 +29,36 @@ import { resolve } from "node:path";
  * @returns {Array<{owner: string, repo: string, url: string}>}
  */
 export function extractGitHubUrls(markdown) {
-  // Match github.com/owner/repo with optional deeper path segments
-  const regex = /https?:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)(?:\/[^\s)]*)?/g;
-
   const seen = new Set();
   const results = [];
-  let match;
+  const lines = markdown.split(/\r?\n/);
 
-  while ((match = regex.exec(markdown)) !== null) {
-    const owner = match[1];
-    // Strip trailing slashes or fragments from repo name
-    const repo = match[2].replace(/[/#].*$/, "");
-    const key = `${owner}/${repo}`.toLowerCase();
+  for (const line of lines) {
+    // Only process markdown list items to avoid matching badge/workflow URLs
+    if (!/^\s*(?:[-*+]|\d+\.)\s+/.test(line)) continue;
 
-    // Skip example/placeholder patterns
-    if (/^example$/i.test(owner)) continue;
-    if (/^YOUR_/i.test(owner)) continue;
-    if (/^YOUR_/i.test(repo)) continue;
+    const regex = /https?:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)(?:\/[^\s)]*)?/g;
+    let match;
 
-    if (seen.has(key)) continue;
-    seen.add(key);
+    while ((match = regex.exec(line)) !== null) {
+      const owner = match[1];
+      const repo = match[2].replace(/[/#].*$/, "");
+      const key = `${owner}/${repo}`.toLowerCase();
 
-    results.push({
-      owner,
-      repo,
-      url: `https://github.com/${owner}/${repo}`,
-    });
+      // Skip example/placeholder patterns
+      if (/^example$/i.test(owner)) continue;
+      if (/^YOUR_/i.test(owner)) continue;
+      if (/^YOUR_/i.test(repo)) continue;
+
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      results.push({
+        owner,
+        repo,
+        url: `https://github.com/${owner}/${repo}`,
+      });
+    }
   }
 
   return results;

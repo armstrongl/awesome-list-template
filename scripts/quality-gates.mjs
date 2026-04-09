@@ -110,8 +110,16 @@ export function checkDuplicates(url, readmeContent) {
   const normalizedUrl = url.toLowerCase();
   const normalizedReadme = readmeContent.toLowerCase();
 
-  if (normalizedReadme.includes(normalizedUrl)) {
-    return { pass: false, message: `URL is a duplicate: ${url}` };
+  // Count occurrences instead of simple includes — the checked-out README
+  // already contains the newly-added URL, so one match is expected.
+  // Flag as duplicate only when the URL appears more than once.
+  let count = 0;
+  let idx = -1;
+  while ((idx = normalizedReadme.indexOf(normalizedUrl, idx + 1)) !== -1) {
+    count++;
+    if (count > 1) {
+      return { pass: false, message: `URL is a duplicate: ${url}` };
+    }
   }
 
   return { pass: true, message: "" };
@@ -425,31 +433,32 @@ async function main() {
   const items = [];
 
   for (const line of lines) {
-    const parsed = parseItem(line);
-    if (!parsed) continue;
-
-    // Skip excluded URLs
-    if (isExcluded(parsed.url)) continue;
-
     const checks = {};
 
-    // Format check
+    // Always evaluate format so malformed items are reported as failures
     checks.format = validateFormat(line);
 
-    // Duplicate check
-    checks.duplicate = checkDuplicates(parsed.url, readmeContent);
+    const parsed = parseItem(line);
 
-    // Link check
-    checks.link = await checkLink(parsed.url);
+    if (parsed) {
+      // Skip excluded URLs
+      if (isExcluded(parsed.url)) continue;
 
-    // GitHub check (only for GitHub URLs)
-    if (GITHUB_REPO_REGEX.test(parsed.url)) {
-      checks.github = await checkGitHub(parsed.url, token);
+      // Duplicate check
+      checks.duplicate = checkDuplicates(parsed.url, readmeContent);
+
+      // Link check
+      checks.link = await checkLink(parsed.url);
+
+      // GitHub check (only for GitHub URLs)
+      if (GITHUB_REPO_REGEX.test(parsed.url)) {
+        checks.github = await checkGitHub(parsed.url, token);
+      }
     }
 
     items.push({
-      name: parsed.name,
-      url: parsed.url,
+      name: parsed ? parsed.name : line,
+      url: parsed ? parsed.url : "",
       checks,
     });
   }

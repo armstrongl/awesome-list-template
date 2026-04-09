@@ -149,7 +149,7 @@ export function parseCliArgs(args) {
         flags.description = args[++i];
         break;
       case "--categories":
-        flags.categories = args[++i]?.split(",").map((c) => c.trim());
+        flags.categories = args[++i]?.split(",").map((c) => c.trim()).filter(Boolean);
         break;
       case "--yes":
         flags.yes = true;
@@ -166,6 +166,9 @@ export function parseCliArgs(args) {
   );
 
   if (!hasAll) return null;
+
+  // Require at least one non-empty category
+  if (flags.categories.length === 0) return null;
 
   return {
     topic: flags.topic,

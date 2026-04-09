@@ -76,24 +76,42 @@ describe("validateFormat", () => {
 // ---------------------------------------------------------------------------
 
 describe("checkDuplicates", () => {
+  // Simulate a checked-out README where the newly-added URL already appears once
   const readmeContent = [
     "- [Existing](https://existing-tool.com) - An existing tool.",
+    "- [Existing Dup](https://existing-tool.com) - A duplicate entry.",
     "- [Another](https://ANOTHER-TOOL.com) - Another tool.",
+    "- [New Item](https://brand-new.com) - The newly added item.",
   ].join("\n");
 
-  it("detects duplicate URL already in README", () => {
+  it("detects duplicate URL appearing more than once in README", () => {
     const result = checkDuplicates("https://existing-tool.com", readmeContent);
     assert.equal(result.pass, false);
     assert.ok(result.message.includes("duplicate"));
   });
 
-  it("passes for a new URL not in README", () => {
+  it("passes for a URL appearing only once (the new addition itself)", () => {
     const result = checkDuplicates("https://brand-new.com", readmeContent);
     assert.equal(result.pass, true);
   });
 
-  it("performs case-insensitive URL comparison", () => {
+  it("passes for a URL not in README at all", () => {
+    const result = checkDuplicates("https://totally-new.com", readmeContent);
+    assert.equal(result.pass, true);
+  });
+
+  it("performs case-insensitive duplicate detection", () => {
+    // "another-tool.com" appears once as ANOTHER-TOOL.com — not a duplicate
     const result = checkDuplicates("https://another-tool.com", readmeContent);
+    assert.equal(result.pass, true);
+  });
+
+  it("detects case-insensitive duplicates when URL appears twice", () => {
+    const content = [
+      "- [Tool](https://DUPE.com) - First.",
+      "- [Tool Again](https://dupe.com) - Second.",
+    ].join("\n");
+    const result = checkDuplicates("https://dupe.com", content);
     assert.equal(result.pass, false);
     assert.ok(result.message.includes("duplicate"));
   });
