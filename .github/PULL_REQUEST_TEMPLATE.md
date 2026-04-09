@@ -13,7 +13,7 @@ Please ensure your PR meets these requirements:
 - [ ] Link is working and appropriate
 - [ ] Item is placed in the correct category
 - [ ] Item is placed in alphabetical order (CI will auto-sort if not)
-- [ ] I have read the [contribution guidelines](CONTRIBUTING.md)
+- [ ] I have read the [contribution guidelines](../CONTRIBUTING.md)
 
 ## Type of Change
 
