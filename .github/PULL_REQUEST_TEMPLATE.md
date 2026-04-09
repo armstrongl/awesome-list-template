@@ -14,6 +14,7 @@ Please ensure your PR meets these requirements:
 - [ ] Item is placed in the correct category
 - [ ] Item is placed in alphabetical order (CI will auto-sort if not)
 - [ ] I have read the [contribution guidelines](../CONTRIBUTING.md)
+- [ ] This submission is not fully AI-generated (AI-assisted is fine, but I have personal experience with this resource)
 
 ## Type of Change
 

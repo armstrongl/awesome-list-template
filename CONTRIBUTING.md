@@ -18,6 +18,19 @@ collection of truly outstanding resources. An item should meet these criteria:
 When in doubt, ask yourself: "Would I confidently recommend this to a colleague
 working with YOUR_TOPIC?" If yes, it likely belongs here.
 
+## AI-Assisted Contributions
+
+AI tools can help draft descriptions, find resources, and format entries. However:
+
+- **Fully AI-generated submissions are not accepted.** You must have personal
+  experience with or knowledge of the item you're submitting.
+- **AI-generated descriptions must be reviewed and edited** to ensure accuracy.
+- **Do not submit items you haven't evaluated.** Curation means personal vetting,
+  not automated discovery.
+
+This policy aligns with the
+[sindresorhus/awesome submission requirements](https://github.com/sindresorhus/awesome/blob/main/pull_request_template.md).
+
 ## Adding an Item
 
 ### Format

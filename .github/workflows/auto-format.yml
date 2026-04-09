@@ -38,8 +38,9 @@ jobs:
           # Update table of contents
           npm run toc
 
-          # Remove Contributing from TOC (awesome-lint requirement)
+          # Remove Contributing and Footnotes from TOC (awesome-lint requirement)
           sed -i 's/- \[Contributing\].*$//' README.md
+          sed -i 's/- \[Footnotes\].*$//' README.md
           sed -i '/^$/N;/^\n$/d' README.md
 
       - name: Check for changes

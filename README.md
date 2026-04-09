@@ -1,20 +1,27 @@
 <!-- markdownlint-disable MD041 -->
+<!-- Update this link to your topic's website or main resource -->
+<a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
   <img alt="Awesome YOUR_TOPIC" src="assets/banner-light.svg" width="1280">
 </picture>
+</a>
 
 # Awesome YOUR_TOPIC [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of awesome YOUR_TOPIC resources.
 
-[![Lint](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml/badge.svg)](https://github.com/armstrongl/awesome-list-template/actions/workflows/validate.yml) [![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/deed) [![Last Commit](https://img.shields.io/github/last-commit/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/commits)
+<!-- Optional: Add a CI badge if you don't plan to submit to sindresorhus/awesome (CI badges are prohibited there):
+[![Lint](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/validate.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/validate.yml) -->
+
+[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/deed) [![Last Commit](https://img.shields.io/github/last-commit/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/commits)
 
 YOUR_LIST_DESCRIPTION
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Contents
 
 - [Legend](#legend)
@@ -53,6 +60,14 @@ _Lists and resources that complement this one._
 ## Contributing
 
 Contributions welcome! Read the [contribution guidelines](CONTRIBUTING.md) first.
+
+<!-- If you need a Footnotes section (for extra copyright notices, source links, etc.),
+add it here. It must NOT appear in the Table of Contents. Example:
+
+## Footnotes
+
+- Source data from [Example](https://example.com).
+-->
 
 ---
 

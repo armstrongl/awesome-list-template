@@ -316,6 +316,25 @@ function replaceTemplateBadgeUrl(values) {
 }
 
 /**
+ * Set GitHub topics (awesome, awesome-list, awesome-<slug>) via `gh` CLI.
+ * Fails gracefully if `gh` is not installed or not authenticated.
+ * @param {object} values
+ */
+function setGitHubTopics(values) {
+  const slug = values.topic.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "");
+  const topics = ["awesome", "awesome-list", `awesome-${slug}`];
+  try {
+    const addFlags = topics.map((t) => `--add-topic ${t}`).join(" ");
+    execSync(`gh repo edit ${addFlags}`, { cwd: ROOT, stdio: "ignore" });
+    console.log(`GitHub topics set: ${topics.join(", ")}`);
+  } catch {
+    console.log(
+      "Note: Could not set GitHub topics automatically. Set them manually in your repo settings: awesome, awesome-list",
+    );
+  }
+}
+
+/**
  * Print a human-readable summary of what will be replaced.
  * @param {object} values
  * @param {Map<string, string[]>} placeholderMap
@@ -465,6 +484,8 @@ async function main() {
   applyReplacements(values);
   replaceTemplateBadgeUrl(values);
   console.log("Replacements applied.");
+
+  setGitHubTopics(values);
 
   // Step 5: Optionally delete scaffolding files
   if (!isNonInteractive && !yesFlag) {

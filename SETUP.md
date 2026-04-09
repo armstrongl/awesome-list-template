@@ -197,3 +197,18 @@ Check for:
 1. Add your first items to the list
 2. Set up GitHub repository settings (branch protection, etc.)
 3. Submit your list to [awesome](https://github.com/sindresorhus/awesome) when ready
+
+## Submitting to sindresorhus/awesome
+
+When your list is mature enough for the official awesome collection, review the full
+[submission requirements](https://github.com/sindresorhus/awesome/blob/main/pull_request_template.md).
+Key requirements that catch people off guard:
+
+- [ ] Your list has been around for **at least 30 days** (from first real commit or open-source date)
+- [ ] Your entry URL must end in `#readme` (e.g., `https://github.com/user/awesome-topic#readme`)
+- [ ] No CI badges in the README (the template removes this by default)
+- [ ] GitHub topics `awesome` and `awesome-list` are set on your repo
+- [ ] You must **review at least 4 other open pull requests** before submitting
+- [ ] Your PR title must be `Add Name of List` (not "Add Awesome Name of List")
+- [ ] The list must not be AI-generated
+- [ ] The description in your entry should describe the project/theme, not the list itself

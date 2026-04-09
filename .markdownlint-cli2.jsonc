@@ -1,4 +1,5 @@
 {
   // Ignore PR templates (they don't need H1 headers)
-  "ignores": [".github/PULL_REQUEST_TEMPLATE.md"]
+  // Ignore .claude/ internal docs (agent notes, plans, brainstorms)
+  "ignores": [".github/PULL_REQUEST_TEMPLATE.md", ".claude/**"]
 }
