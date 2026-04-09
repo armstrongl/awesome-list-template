@@ -15,14 +15,12 @@ YOUR_LIST_DESCRIPTION
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Contents
 
 - [Legend](#legend)
 - [YOUR_CATEGORY_1](#your_category_1)
 - [YOUR_CATEGORY_2](#your_category_2)
 - [Related](#related)
-
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Legend
