@@ -15,7 +15,7 @@
 <!-- Optional: Add a CI badge if you don't plan to submit to sindresorhus/awesome (CI badges are prohibited there):
 [![Lint](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/validate.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/validate.yml) -->
 
-[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/deed) [![Last Commit](https://img.shields.io/github/last-commit/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/commits)
+[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg?style=flat)](https://creativecommons.org/publicdomain/zero/1.0/deed) [![Last Commit](https://img.shields.io/github/last-commit/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME?style=flat)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/commits)
 
 YOUR_LIST_DESCRIPTION
 
@@ -33,10 +33,12 @@ YOUR_LIST_DESCRIPTION
 
 <!-- Remove markers you don't need for your list -->
 
-- 💰 Paid resource or service.
-- 🧪 Beta or experimental.
-- ⚠️ Not maintained for 12+ months.
-- 🚫 Deprecated.
+| Badge                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Meaning                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| ![Paid](https://img.shields.io/badge/Paid-coral?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGxpbmUgeDE9IjEyIiB4Mj0iMTIiIHkxPSIyIiB5Mj0iMjIiLz48cGF0aCBkPSJNMTcgNUg5LjVhMy41IDMuNSAwIDAgMCAwIDdoNWEzLjUgMy41IDAgMCAxIDAgN0g2Ii8+PC9zdmc+)                                                                                        | Paid resource or service.      |
+| ![Beta](https://img.shields.io/badge/Beta-blue?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE0IDJ2NmEyIDIgMCAwIDAgLjI0NS45Nmw1LjUxIDEwLjA4QTIgMiAwIDAgMSAxOCAyMkg2YTIgMiAwIDAgMS0xLjc1NS0yLjk2bDUuNTEtMTAuMDhBMiAyIDAgMCAwIDEwIDhWMiIvPjxwYXRoIGQ9Ik02LjQ1MyAxNWgxMS4wOTQiLz48cGF0aCBkPSJNOC41IDJoNyIvPjwvc3ZnPg==) | Beta or experimental.          |
+| ![Stale](https://img.shields.io/badge/Stale-yellow?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0ibTIxLjczIDE4LTgtMTRhMiAyIDAgMCAwLTMuNDggMGwtOCAxNEEyIDIgMCAwIDAgNCAyMWgxNmEyIDIgMCAwIDAgMS43My0zIi8+PHBhdGggZD0iTTEyIDl2NCIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=)                                                 | Not maintained for 12+ months. |
+| ![Deprecated](https://img.shields.io/badge/Deprecated-red?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJtMTUgOS02IDYiLz48cGF0aCBkPSJtOSA5IDYgNiIvPjwvc3ZnPg==)                                                                                                              | Deprecated.                    |
 
 ## YOUR_CATEGORY_1
 

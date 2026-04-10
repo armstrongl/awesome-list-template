@@ -134,7 +134,7 @@ These files are optional. Remove anything that does not fit your workflow:
 | `.github/workflows/welcome.yml`                                               | If you don't want welcome messages                                                |
 | `.github/workflows/staleness-check.yml`                                       | If you don't need staleness detection                                             |
 | `.github/workflows/pr-quality-check.yml` + `.github/workflows/pr-comment.yml` | If you don't need quality gates                                                   |
-| `## Legend` section in `README.md`                                            | If you don't use markers                                                          |
+| `## Legend` section in `README.md`                                            | If you don't use shields.io legend badges                                         |
 | `assets/banner-light.svg` + `assets/banner-dark.svg`                          | If you don't want a banner (also remove the `<picture>` element from `README.md`) |
 
 ## List Item Format

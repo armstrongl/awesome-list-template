@@ -65,7 +65,7 @@ The issue templates in `.github/ISSUE_TEMPLATE/` have placeholder category optio
 | **PR template**         | Checklist with attestation for contributors             |
 | **Banner**              | Light/dark SVG banners with `<picture>` element         |
 | **Badge row**           | CI, Track, License, and Last Commit badges              |
-| **Legend**              | Emoji markers for paid, beta, stale, deprecated         |
+| **Legend**              | Shields.io badges for paid, beta, stale, deprecated     |
 | **Code of Conduct**     | Contributor Covenant v2.1                               |
 | **Stale bot**           | Auto-closes inactive issues and PRs                     |
 | **Welcome bot**         | Greets first-time contributors                          |
