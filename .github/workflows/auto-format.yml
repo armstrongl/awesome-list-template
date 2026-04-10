@@ -43,6 +43,9 @@ jobs:
           sed -i 's/- \[Footnotes\].*$//' README.md
           sed -i '/^$/N;/^\n$/d' README.md
 
+          # Normalize formatting after all transformations
+          npm run format:fix
+
       - name: Check for changes
         id: changes
         run: |
