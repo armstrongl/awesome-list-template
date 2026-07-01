@@ -19,7 +19,7 @@
     "awesome-lint": "^1.0.0",
     "doctoc": "^2.2.1",
     "markdownlint-cli2": "^0.14.0",
-    "prettier": "^3.4.2"
+    "prettier": "^3.9.4"
   },
   "keywords": [
     "awesome",
